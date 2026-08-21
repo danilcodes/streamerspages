@@ -3,6 +3,7 @@ let timer;
 let chatTimer;
 
 let messages = [];
+let testStarted = false;
 
 
 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4zH6wuN-DUpvR0aU21n2SCpi2ZZXN1QnquqHacftVgxxwrJQxXF3knYyR-KJua3KY4m8EkXtcPW0L/pub?gid=0&single=true&output=csv";
@@ -31,11 +32,19 @@ fetch(sheetURL)
 
         console.log("Comments loaded:", messages);
 
+
+        // если тест уже начался - сразу отправляем первый комментарий
+        if(testStarted){
+            addMessage();
+        }
+
     });
 
 
 
 function startTest() {
+
+    testStarted = true;
 
 
     document.getElementById("startButton").style.display = "none";
