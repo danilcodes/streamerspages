@@ -17,7 +17,6 @@ fetch(sheetURL)
 
         rows.shift();
 
-
         messages = rows.map(row => {
 
             let parts = row.split(",");
@@ -33,7 +32,6 @@ fetch(sheetURL)
         console.log("Comments loaded:", messages);
 
 
-        // если тест уже начался - сразу отправляем первый комментарий
         if(testStarted){
             addMessage();
         }
@@ -58,6 +56,7 @@ function startTest() {
     "LIVE TEST IN PROGRESS";
 
 
+    // первый комментарий сразу
     addMessage();
 
 
@@ -116,7 +115,6 @@ function addMessage(){
     let chat = document.getElementById("chat");
 
     let div = document.createElement("div");
-
 
     div.className = "message";
 
