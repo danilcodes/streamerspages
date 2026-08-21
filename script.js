@@ -2,6 +2,7 @@ let seconds = 300;
 let timer;
 let chatTimer;
 
+
 const messages = [
     {
         name: "andi123",
@@ -34,10 +35,13 @@ const messages = [
 ];
 
 
+
 function startTest() {
 
     document.getElementById("startButton").style.display = "none";
-    document.getElementById("finishButton").style.display = "block";
+
+    document.getElementById("finishButton").style.display = "inline-block";
+
 
     document.querySelector(".status").innerHTML =
     "LIVE TEST IN PROGRESS";
@@ -56,6 +60,14 @@ function startTest() {
 
 function finishTest(){
 
+    completeTest();
+
+}
+
+
+
+function completeTest(){
+
     clearInterval(timer);
     clearInterval(chatTimer);
 
@@ -66,7 +78,7 @@ function finishTest(){
 
     document.getElementById("finishButton").style.display = "none";
 
-    document.getElementById("restartButton").style.display = "block";
+    document.getElementById("restartButton").style.display = "inline-block";
 
 }
 
@@ -108,6 +120,7 @@ function addMessage(){
 
 
 
+
 function updateTimer(){
 
     seconds--;
@@ -122,13 +135,10 @@ function updateTimer(){
     `${minutes}:${sec.toString().padStart(2,"0")}`;
 
 
+
     if(seconds <= 0){
 
-        clearInterval(timer);
-        clearInterval(chatTimer);
-
-        document.querySelector(".status").innerHTML =
-        "TEST COMPLETED";
+        completeTest();
 
     }
 
