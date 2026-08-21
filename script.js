@@ -2,6 +2,8 @@ let seconds = 300;
 let timer;
 let chatTimer;
 
+let messages = [];
+
 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4zH6wuN-DUpvR0aU21n2SCpi2ZZXN1QnquqHacftVgxxwrJQxXF3knYyR-KJua3KY4m8EkXtcPW0L/pub?gid=0&single=true&output=csv";
 
 
@@ -11,7 +13,7 @@ fetch(sheetURL)
 
         let rows = data.split("\n");
 
-        rows.shift(); // удаляем заголовок name,comment
+        rows.shift(); // удаляем заголовок
 
 
         messages = rows.map(row => {
@@ -23,21 +25,17 @@ fetch(sheetURL)
                 text: parts[1]
             };
 
-        });
+        }).filter(message => message.name && message.text);
+
+
+        console.log("Comments loaded:", messages);
 
     });
-
-let messages = [];
-
 
 
 
 function startTest() {
 
-    if(messages.length === 0){
-    alert("Comments are loading, try again");
-    return;
-}
 
     document.getElementById("startButton").style.display = "none";
 
@@ -51,7 +49,7 @@ function startTest() {
     addMessage();
 
 
-    chatTimer = setInterval(addMessage, 20000);
+    chatTimer = setInterval(addMessage, 15000);
 
     timer = setInterval(updateTimer, 1000);
 
@@ -95,11 +93,18 @@ function restartTest(){
 
 function addMessage(){
 
+    if(messages.length === 0){
+        return;
+    }
+
+
     let random = messages[Math.floor(Math.random() * messages.length)];
+
 
     let chat = document.getElementById("chat");
 
     let div = document.createElement("div");
+
 
     div.className = "message";
 
@@ -118,7 +123,6 @@ function addMessage(){
     }
 
 }
-
 
 
 
