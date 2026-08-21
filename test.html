@@ -12,21 +12,25 @@
             font-family: Arial, sans-serif;
         }
 
+
         .header {
             padding: 20px;
             text-align: center;
             background: #181818;
         }
 
+
         h1 {
             margin: 0;
         }
+
 
         .timer {
             margin-top: 10px;
             font-size: 24px;
             color: #00ff88;
         }
+
 
 
         .instructions {
@@ -39,14 +43,17 @@
             line-height: 1.5;
         }
 
+
         .instructions h2 {
             text-align: center;
             margin-top: 0;
         }
 
+
         .instructions li {
             margin-bottom: 8px;
         }
+
 
 
         .buttons {
@@ -54,6 +61,7 @@
             justify-content: center;
             align-items: center;
         }
+
 
 
         .chat {
@@ -70,6 +78,7 @@
         }
 
 
+
         .message {
             background: #333;
             padding: 12px;
@@ -79,10 +88,12 @@
         }
 
 
+
         .username {
             font-weight: bold;
             color: #00ff88;
         }
+
 
 
         @keyframes appear {
@@ -90,6 +101,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -97,11 +109,13 @@
         }
 
 
+
         .status {
             text-align: center;
             margin-top: 20px;
             color: #aaa;
         }
+
 
 
         #startButton,
@@ -118,10 +132,12 @@
         }
 
 
+
         #startButton {
             background: #00ff88;
             color: #111;
         }
+
 
 
         #finishButton {
@@ -130,10 +146,12 @@
         }
 
 
+
         #restartButton {
             background: #00ff88;
             color: #111;
         }
+
 
 
         #backButton {
@@ -149,6 +167,7 @@
             display: inline-block;
             transition: 0.2s;
         }
+
 
 
         #startButton:hover,
@@ -167,65 +186,34 @@
 
 <div class="header">
 
+
     <h1>STREAMER LIVE TEST</h1>
+
 
 
     <div class="instructions" id="instructions">
 
 
-    <h2>Инструкция по тесту</h2>
+        <h2>Инструкция по тесту</h2>
 
 
-    <p>
-    🛠️ Перед началом теста:
-    </p>
 
-    <ul>
-        <li>Зарегистрируйтесь на Stockity и откройте демо-аккаунт.</li>
-        <li>Подготовьте камеру, экран и ваш сетап согласно инструкции, чтобы всё выглядело как настоящий LIVE.</li>
-        <li>Расположите окно с чатом так, чтобы вам было удобно читать сообщения зрителей, а график оставался хорошо виден в кадре.</li>
-    </ul>
+        <p>
+        📹 Во время теста:
+        </p>
 
 
-    <p>
-    📹 Во время теста:
-    </p>
-
-    <ul>
-        <li>Начните стрим естественно: поприветствуйте зрителей и объясните, что вы будете делать.</li>
-        <li>Проведите анализ рынка и объясните, почему вы выбрали конкретную точку входа.</li>
-        <li>Откройте сделку и объясните своё решение так, чтобы оно было понятно новичкам.</li>
-        <li>Пока ожидаете результат сделки, взаимодействуйте со зрителями и отвечайте на вопросы из чата.</li>
-        <li>После закрытия сделки отреагируйте на результат и объясните его.</li>
-    </ul>
-
-
-    <p>
-    📜 Взаимодействие с чатом во время теста:
-    </p>
-
-    <ul>
-        <li>Выберите несколько комментариев, которые считаете важными, и ответьте на них естественно, как во время настоящего TikTok LIVE.</li>
-        <li>На реальном стриме важно внимательно следить за чатом и взаимодействовать со зрителями.</li>
-    </ul>
-
-
-    <p>
-    🔄 Попытки прохождения:
-    </p>
-
-    <ul>
-        <li>Если во время теста что-то пошло не так, вы можете перезапустить тест и попробовать снова.</li>
-        <li>Используйте возможность перезапуска, чтобы подготовиться и показать свой лучший результат.</li>
-    </ul>
-
-
-    <p>
-    <b>Главная цель теста - показать, как вы общаетесь со зрителями и объясняете свои торговые решения.</b>
-    </p>
+        <ul>
+            <li>Начните стрим естественно: поприветствуйте зрителей и объясните, что вы будете делать.</li>
+            <li>Проведите анализ рынка и объясните, почему вы выбрали конкретную точку входа.</li>
+            <li>Откройте сделку и объясните своё решение так, чтобы оно было понятно новичкам.</li>
+            <li>Пока ожидаете результат сделки, выберите несколько комментариев и ответьте на них.</li>
+            <li>После закрытия сделки отреагируйте на результат и объясните его.</li>
+        </ul>
 
 
     </div>
+
 
 
     <div class="timer">
@@ -234,21 +222,27 @@
 
 
 
+
     <div class="buttons">
+
 
         <button id="startButton" onclick="startTest()">
             START TEST
         </button>
 
+
         <button id="finishButton" onclick="finishTest()" style="display:none;">
             FINISH TEST
         </button>
+
 
         <button id="restartButton" onclick="restartTest()" style="display:none;">
             RESTART TEST
         </button>
 
+
     </div>
+
 
 
     <a id="backButton" href="index.html">
@@ -256,7 +250,10 @@
     </a>
 
 
+
 </div>
+
+
 
 
 
@@ -266,13 +263,16 @@
 
 
 
+
 <div class="status">
     READY TO START
 </div>
 
 
 
+
 <script src="script.js"></script>
+
 
 
 </body>
