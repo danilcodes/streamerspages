@@ -37,10 +37,10 @@ const messages = [
 function startTest() {
 
     document.getElementById("startButton").style.display = "none";
-    document.getElementById("startButton").style.display = "none";
     document.getElementById("finishButton").style.display = "block";
 
-    document.querySelector(".status").innerHTML = "LIVE TEST STARTED";
+    document.querySelector(".status").innerHTML =
+    "LIVE TEST IN PROGRESS";
 
 
     addMessage();
@@ -49,6 +49,32 @@ function startTest() {
     chatTimer = setInterval(addMessage, 20000);
 
     timer = setInterval(updateTimer, 1000);
+
+}
+
+
+
+function finishTest(){
+
+    clearInterval(timer);
+    clearInterval(chatTimer);
+
+
+    document.querySelector(".status").innerHTML =
+    "TEST COMPLETED";
+
+
+    document.getElementById("finishButton").style.display = "none";
+
+    document.getElementById("restartButton").style.display = "block";
+
+}
+
+
+
+function restartTest(){
+
+    location.reload();
 
 }
 
