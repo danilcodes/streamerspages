@@ -28,6 +28,10 @@
             color: #00ff88;
         }
 
+        .buttons {
+            text-align: center;
+        }
+
         .chat {
             max-width: 600px;
             margin: 30px auto;
@@ -71,60 +75,54 @@
             color: #aaa;
         }
 
-             
-        .buttons {
-    text-align: center;
-}    
-        
-#startButton {
-    margin-top: 20px;
-    padding: 15px 60px;
-    font-size: 22px;
-    background: #00ff88;
-    color: #111;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
+
+        #startButton {
+            margin-top: 20px;
+            padding: 15px 60px;
+            font-size: 22px;
+            background: #00ff88;
+            color: #111;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
 
-#finishButton {
-    margin-top: 20px;
-    padding: 15px 60px;
-    font-size: 22px;
-    background: #ff5555;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
+        #finishButton {
+            margin-top: 20px;
+            padding: 15px 60px;
+            font-size: 22px;
+            background: #ff5555;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
 
-#restartButton {
-    margin-top: 20px;
-    padding: 15px 60px;
-    font-size: 22px;
-    background: #00ff88;
-    color: #111;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
+        #restartButton {
+            margin-top: 20px;
+            padding: 15px 60px;
+            font-size: 22px;
+            background: #00ff88;
+            color: #111;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
 
-#startButton:hover,
-#finishButton:hover,
-#restartButton:hover {
-    transform: scale(1.05);
-}
-
-
+        #startButton:hover,
+        #finishButton:hover,
+        #restartButton:hover {
+            transform: scale(1.05);
+        }
 
     </style>
 </head>
@@ -145,25 +143,18 @@
     <div class="buttons">
 
         <button id="startButton" onclick="startTest()">
-        START TEST
+            START TEST
         </button>
 
         <button id="finishButton" onclick="finishTest()" style="display:none;">
-        FINISH TEST
+            FINISH TEST
         </button>
 
         <button id="restartButton" onclick="restartTest()" style="display:none;">
-        RESTART TEST
+            RESTART TEST
         </button>
 
     </div>
-
-</div>
-    <div class="timer">
-        05:00
-    </div>
-
-    
 
 </div>
 
