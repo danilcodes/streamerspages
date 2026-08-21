@@ -34,6 +34,11 @@ let messages = [];
 
 function startTest() {
 
+    if(messages.length === 0){
+    alert("Comments are loading, try again");
+    return;
+}
+
     document.getElementById("startButton").style.display = "none";
 
     document.getElementById("finishButton").style.display = "inline-block";
