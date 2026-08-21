@@ -2,37 +2,33 @@ let seconds = 300;
 let timer;
 let chatTimer;
 
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4zH6wuN-DUpvR0aU21n2SCpi2ZZXN1QnquqHacftVgxxwrJQxXF3knYyR-KJua3KY4m8EkXtcPW0L/pub?gid=0&single=true&output=csv";
 
-const messages = [
-    {
-        name: "andi123",
-        text: "Hello bang, first time here"
-    },
-    {
-        name: "trader01",
-        text: "What is your analysis today?"
-    },
-    {
-        name: "crypto_master",
-        text: "Can you explain this entry?"
-    },
-    {
-        name: "newbie88",
-        text: "Is this safe for beginners?"
-    },
-    {
-        name: "market_pro",
-        text: "Why did you choose this direction?"
-    },
-    {
-        name: "andi_fx",
-        text: "How long will this trade take?"
-    },
-    {
-        name: "profit_hunter",
-        text: "Can I follow this setup?"
-    }
-];
+
+fetch(sheetURL)
+    .then(response => response.text())
+    .then(data => {
+
+        let rows = data.split("\n");
+
+        rows.shift(); // удаляем заголовок name,comment
+
+
+        messages = rows.map(row => {
+
+            let parts = row.split(",");
+
+            return {
+                name: parts[0],
+                text: parts[1]
+            };
+
+        });
+
+    });
+
+let messages = [];
+
 
 
 
