@@ -3,7 +3,6 @@ let timer;
 let chatTimer;
 
 let messages = [];
-let commentsReady = false;
 
 
 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4zH6wuN-DUpvR0aU21n2SCpi2ZZXN1QnquqHacftVgxxwrJQxXF3knYyR-KJua3KY4m8EkXtcPW0L/pub?gid=0&single=true&output=csv";
@@ -30,8 +29,6 @@ fetch(sheetURL)
         }).filter(message => message.name && message.text);
 
 
-        commentsReady = true;
-
         console.log("Comments loaded:", messages);
 
     });
@@ -39,11 +36,6 @@ fetch(sheetURL)
 
 
 function startTest() {
-
-    if(!commentsReady){
-        alert("Comments are still loading");
-        return;
-    }
 
 
     document.getElementById("startButton").style.display = "none";
@@ -55,13 +47,10 @@ function startTest() {
     "LIVE TEST IN PROGRESS";
 
 
-    // первый комментарий сразу
     addMessage();
 
 
-    // дальше каждые 15 секунд
     chatTimer = setInterval(addMessage, 15000);
-
 
     timer = setInterval(updateTimer, 1000);
 
