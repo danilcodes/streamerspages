@@ -37,6 +37,8 @@ const messages = [
 function startTest() {
 
     document.getElementById("startButton").style.display = "none";
+    document.getElementById("startButton").style.display = "none";
+    document.getElementById("finishButton").style.display = "block";
 
     document.querySelector(".status").innerHTML = "LIVE TEST STARTED";
 
