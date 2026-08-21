@@ -40,6 +40,8 @@ function startTest() {
 
     document.getElementById("startButton").style.display = "none";
 
+    document.getElementById("instructions").style.display = "none";
+
     document.getElementById("finishButton").style.display = "inline-block";
 
 
